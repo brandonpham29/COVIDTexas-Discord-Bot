@@ -13,10 +13,7 @@ bot.on('message', async msg=> {
     }
     const args = msg.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase()
-    console.log(args)
-    console.log(command)
-
-
+    
     if(command === "covidtx"){
         let county;
         let countyName;
