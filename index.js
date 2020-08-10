@@ -5,8 +5,8 @@ const prefix = "!";
 
 bot.once('ready', () => {
     console.log('Bot is ready!');
-    client.user.setStatus('online')
-    client.user.setPresence({
+    bot.user.setStatus('online')
+    bot.user.setPresence({
         game: {
             name: 'Use !covidtx help',
             type: "Playing",
