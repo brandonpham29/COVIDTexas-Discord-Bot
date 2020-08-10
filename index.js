@@ -5,7 +5,14 @@ const prefix = "!";
 
 bot.once('ready', () => {
     console.log('Bot is ready!');
-    bot.user.setActivity('type !covidtx help');
+    client.user.setStatus('online')
+    client.user.setPresence({
+        game: {
+            name: 'Use !covidtx help',
+            type: "Playing",
+            url: "https://discordapp.com/"
+        }
+    });
 });
 
 bot.on('message', async msg=> {
