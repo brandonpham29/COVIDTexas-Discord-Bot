@@ -4,7 +4,8 @@ const axios = require('axios')
 const prefix = "!";
 
 bot.once('ready', () => {
-	console.log('Bot is ready!');
+    console.log('Bot is ready!');
+    bot.user.setActivity('type !covidtx help');
 });
 
 bot.on('message', async msg=> {
