@@ -37,6 +37,10 @@ bot.on('message', async msg=> {
 
     }
 
+    if(command === "help"){
+        msg.reply("Type !covidtx to see all COVID-19 cases in texas or type !covidtx (County Name) to see COVID-19 cases in that county. \n If it states undefined, check your spelling and capitalization or it is not in the database.")
+    }
+
 })
 
 bot.login(process.env.token);
