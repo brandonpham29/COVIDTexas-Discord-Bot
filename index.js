@@ -21,7 +21,7 @@ bot.on('message', async msg=> {
             county = "Texas%20Total"
             countyName = "Texas"
         } else if (args[0] === "help") {
-            msg.reply("\n Type !covidtx to see all COVID-19 cases in texas or type !covidtx (County Name) to see COVID-19 cases in that county. \n If the county has undefined cases/deaths, check your spelling and capitalization or it is not in the database.")
+            msg.reply("\n Type !covidtx to see the total COVID-19 data in Texas or type !covidtx (County Name) to see COVID-19 data in that county. \n If the county has undefined cases/deaths, check your spelling and capitalization or it is not in the database.")
         } else {
             county = args[0]
             countyName = county + " County"
