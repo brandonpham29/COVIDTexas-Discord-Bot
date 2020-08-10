@@ -13,7 +13,7 @@ bot.on('message', async msg=> {
     }
     const args = msg.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase()
-    
+
     if(command === "covidtx"){
         let county;
         let countyName;
@@ -26,14 +26,17 @@ bot.on('message', async msg=> {
             county = args[0]
             countyName = county + " County"
         }
-        let getData = async () => {
-            let response = await axios.get(`https://us-central1-firestoretest-3538c.cloudfunctions.net/app/api/read/${county}`)
-            let data = response.data
-            return data
-        }
-        let dataValue = await getData()
-        msg.reply(`${countyName} has a total of ${dataValue.Cases} cases and ${dataValue.Deaths} deaths.`)
 
+        if (args[0] != "help") {
+            let getData = async () => {
+                let response = await axios.get(`https://us-central1-firestoretest-3538c.cloudfunctions.net/app/api/read/${county}`)
+                let data = response.data
+                return data
+            }
+            let dataValue = await getData()
+            msg.reply(`${countyName} has a total of ${dataValue.Cases} cases and ${dataValue.Deaths} deaths.`)
+        }
+        
     }
 })
 
