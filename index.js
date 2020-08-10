@@ -23,6 +23,8 @@ bot.on('message', async msg=> {
         if(args.length === 0){
             county = "Texas%20Total"
             countyName = "Texas"
+        } else if (args[0] === "help") {
+            msg.reply("\n Type !covidtx to see all COVID-19 cases in texas or type !covidtx (County Name) to see COVID-19 cases in that county. \n If it states undefined, check your spelling and capitalization or it is not in the database.")
         } else {
             county = args[0]
             countyName = county + " County"
@@ -36,11 +38,6 @@ bot.on('message', async msg=> {
         msg.reply(`${countyName} has a total of ${dataValue.Cases} cases and ${dataValue.Deaths} deaths.`)
 
     }
-
-    if(command === "help"){
-        msg.reply("Type !covidtx to see all COVID-19 cases in texas or type !covidtx (County Name) to see COVID-19 cases in that county. \n If it states undefined, check your spelling and capitalization or it is not in the database.")
-    }
-
 })
 
 bot.login(process.env.token);
