@@ -39,4 +39,4 @@ bot.on('message', async msg=> {
 
 })
 
-bot.login(process.env.NzQyNDUyMzg3MTU1MDE3Nzcx.XzGUqw.ZQ37YTRM_pJpwl5cnNwRkZTkLAA);
+bot.login("NzQyNDUyMzg3MTU1MDE3Nzcx.XzGUqw.ZQ37YTRM_pJpwl5cnNwRkZTkLAA");
