@@ -8,7 +8,7 @@ bot.once('ready', () => {
     bot.user.setStatus('online')
     bot.user.setPresence({
         game: {
-            name: 'Use !covidtx help',
+            name: 'Use !covidtx',
             type: "Playing",
             url: "https://discordapp.com/"
         }
@@ -26,16 +26,16 @@ bot.on('message', async msg=> {
         let county;
         let countyName;
         if(args.length === 0){
+            msg.reply("\n Type !covidtx (County Name) to see COVID-19 data in that county or !covid Texas to see total Texas data. \n If the county has undefined cases/deaths, check your spelling and capitalization or it is not in the database.")
+        } else if (args[0] === "Texas") {
             county = "Texas%20Total"
             countyName = "Texas"
-        } else if (args[0] === "help") {
-            msg.reply("\n Type !covidtx to see the total COVID-19 data in Texas or type !covidtx (County Name) to see COVID-19 data in that county. \n If the county has undefined cases/deaths, check your spelling and capitalization or it is not in the database.")
         } else {
             county = args[0]
             countyName = county + " County"
         }
 
-        if (args[0] != "help") {
+        if (args.length > 0) {
             let getData = async () => {
                 let response = await axios.get(`https://us-central1-firestoretest-3538c.cloudfunctions.net/app/api/read/${county}`)
                 let data = response.data
