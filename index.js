@@ -31,8 +31,14 @@ bot.on('message', async msg=> {
             county = "Texas%20Total"
             countyName = "Texas"
         } else {
-            county = args[0]
-            countyName = county + " County"
+            if (args.length > 1) {
+                county = args.join("%20");
+                countyName = args.join(" ")
+            } else{
+                county = args[0]
+                countyName = args[0]
+            }
+            countyName = countyName + " County"
         }
 
         if (args.length > 0) {
